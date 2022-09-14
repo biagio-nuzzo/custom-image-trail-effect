@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.f027960d.css",
-    "main.js": "/react-gh-pages/static/js/main.1140f0ec.js",
-    "static/js/787.637815de.chunk.js": "/react-gh-pages/static/js/787.637815de.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.f027960d.css.map": "/react-gh-pages/static/css/main.f027960d.css.map",
-    "main.1140f0ec.js.map": "/react-gh-pages/static/js/main.1140f0ec.js.map",
-    "787.637815de.chunk.js.map": "/react-gh-pages/static/js/787.637815de.chunk.js.map"
+    "main.css": "/custom-image-trail-effect/static/css/main.f027960d.css",
+    "main.js": "/custom-image-trail-effect/static/js/main.15d7293d.js",
+    "static/js/787.637815de.chunk.js": "/custom-image-trail-effect/static/js/787.637815de.chunk.js",
+    "index.html": "/custom-image-trail-effect/index.html",
+    "main.f027960d.css.map": "/custom-image-trail-effect/static/css/main.f027960d.css.map",
+    "main.15d7293d.js.map": "/custom-image-trail-effect/static/js/main.15d7293d.js.map",
+    "787.637815de.chunk.js.map": "/custom-image-trail-effect/static/js/787.637815de.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f027960d.css",
-    "static/js/main.1140f0ec.js"
+    "static/js/main.15d7293d.js"
   ]
 }
