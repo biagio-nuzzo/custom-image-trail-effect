@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/custom-image-trail-effect/static/css/main.f027960d.css",
-    "main.js": "/custom-image-trail-effect/static/js/main.15d7293d.js",
-    "static/js/787.637815de.chunk.js": "/custom-image-trail-effect/static/js/787.637815de.chunk.js",
+    "main.css": "/custom-image-trail-effect/static/css/main.4c9825e3.css",
+    "main.js": "/custom-image-trail-effect/static/js/main.3a367948.js",
+    "static/media/background.jpg": "/custom-image-trail-effect/static/media/background.60728ba1fb6c1da190be.jpg",
     "index.html": "/custom-image-trail-effect/index.html",
-    "main.f027960d.css.map": "/custom-image-trail-effect/static/css/main.f027960d.css.map",
-    "main.15d7293d.js.map": "/custom-image-trail-effect/static/js/main.15d7293d.js.map",
-    "787.637815de.chunk.js.map": "/custom-image-trail-effect/static/js/787.637815de.chunk.js.map"
+    "main.4c9825e3.css.map": "/custom-image-trail-effect/static/css/main.4c9825e3.css.map",
+    "main.3a367948.js.map": "/custom-image-trail-effect/static/js/main.3a367948.js.map"
   },
   "entrypoints": [
-    "static/css/main.f027960d.css",
-    "static/js/main.15d7293d.js"
+    "static/css/main.4c9825e3.css",
+    "static/js/main.3a367948.js"
   ]
 }
