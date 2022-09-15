@@ -18,6 +18,7 @@
 }
 
 .checkBoxClass {
+  padding-left: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 320px;
@@ -39,4 +40,9 @@
 .checkBoxContainer {
   padding-top: 2px;
   width: 10%;
+}
+
+.link{
+  padding-left: 5px;
+  margin-bottom: 15px;
 }

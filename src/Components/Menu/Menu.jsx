@@ -61,9 +61,6 @@ const Menu = (props) => {
         {...props.form.getInputProps("animationMoveDuration")}
       />
       <InputField
-        style={{
-          marginBottom: "25px",
-        }}
         label="animationFadeType (linear)"
         placeholder="animationFadeType"
         type="text"
@@ -72,10 +69,16 @@ const Menu = (props) => {
         }}
         {...props.form.getInputProps("animationFadeType")}
       />
+      <div className={Style.link}>
+        <a
+          href="https://www.w3schools.com/css/css3_transitions.asp"
+          target="_blank"
+        >
+          Resource
+        </a>
+      </div>
+
       <InputField
-        style={{
-          marginBottom: "25px",
-        }}
         label="animationMoveType (ease-in-out)"
         placeholder="animationMoveType"
         type="text"
@@ -84,6 +87,14 @@ const Menu = (props) => {
         }}
         {...props.form.getInputProps("animationMoveType")}
       />
+      <div className={Style.link}>
+        <a
+          href="https://www.w3schools.com/css/css3_transitions.asp"
+          target="_blank"
+        >
+          Resource
+        </a>
+      </div>
       <InputField
         style={{
           marginBottom: "25px",
