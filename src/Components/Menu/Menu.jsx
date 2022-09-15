@@ -73,6 +73,7 @@ const Menu = (props) => {
         <a
           href="https://www.w3schools.com/css/css3_transitions.asp"
           target="_blank"
+          rel="noreferrer"
         >
           Resource
         </a>
@@ -91,6 +92,7 @@ const Menu = (props) => {
         <a
           href="https://www.w3schools.com/css/css3_transitions.asp"
           target="_blank"
+          rel="noreferrer"
         >
           Resource
         </a>
