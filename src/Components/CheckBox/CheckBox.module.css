@@ -1,0 +1,21 @@
+.checkBox {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxChecked {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.checkboxNotChecked {
+    border: 1px solid #ccc;
+  }
+
+.checkBox svg {
+  height: 75%;
+  width: 75%;
+  color: white;
+}

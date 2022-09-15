@@ -11,19 +11,24 @@ import getRelativeCoordinates from "./Functions/getRelativeCoordinates";
 import Style from "./ImageTrailEffect.module.css";
 
 const ImageTrailEffect = ({
-  animationDuration = 1,
-  animationType = "ease-in-out",
+  animationFadeDuration = 0.5,
+  animationFadeDelay = 0.5,
+  animationMoveDuration = 1,
+  animationFadeType = "ease-in-out",
+  animationMoveType = "ease-in-out",
   endOpacity = 0,
   endScale = 0.5,
+  floater = true,
   imageHeight = 600,
   imageWidth = 400,
   images,
+  movementXRation = 0.5,
+  movementYRation = 0.5,
   maxImageCount = 10,
   spawnAdjustmentXValue = 2,
   spawnAdjustmentYValue = 3,
   startOpacity = 1,
   startScale = 1,
-  switchAnimation = "20%",
   triggerDistance = 80,
 }) => {
   // States
@@ -78,51 +83,84 @@ const ImageTrailEffect = ({
 
           // Set the coordinates for the new image
           const p1 = firstPointRef.current;
-          const x3 = relativeCoordinates.x - p1.x;
-          const y3 = relativeCoordinates.y - p1.y;
+          const x3 = (relativeCoordinates.x - p1.x) * movementXRation;
+          const y3 = (relativeCoordinates.y - p1.y) * movementYRation;
 
           // Set the first point
           setFirstPoint({ x: relativeCoordinates.x, y: relativeCoordinates.y });
 
           // Create styled-components element in order to create the new image
-          // Animation
+          // Animations
           const animationMove = keyframes`
                   0% {
-                    transform: translate(0px, 0px);
-                    opacity: ${startOpacity};
+                    transform: translate(${spawnAdjustmentX}px, ${spawnAdjustmentY}px));
                   }
-
-                ${switchAnimation}{
-                    transform: translate(${x3}px, ${y3}px);
-                    scale: ${startScale};
-                    opacity: ${startOpacity};
-                    }
       
                   100% {
                     transform: translate(${x3}px, ${y3}px);
-                    opacity: ${endOpacity};
-                    scale: ${endScale};
                   }
                 `;
 
+          const animationFade = keyframes`
+          0% {
+            opacity: ${startOpacity};
+            transform: scale(${startScale});
+          }
+          100% {
+            opacity: ${endOpacity};
+            transform: scale(${endScale});
+          }`;
+
+          const animationFloat = keyframes`
+          0% {
+            transform: translate(0px, 0px);
+          }
+          50% {
+            transform: translate(0px, -${Math.floor(
+              Math.random() * (15 - 10 + 1) + 10
+            )}px);
+          }
+          100% {
+            transform: translate(0px, 0px);
+          }`;
+
           // Styled-component
+          const Floater = styled.div`
+            animation: ${animationFloat}
+              ${Math.floor(Math.random() * (3 - 2 + 1) + 2)}s linear infinite;
+          `;
+
           const Translator = styled.div`
-            animation: ${animationMove} ${animationDuration}s ${animationType}
-              forwards;
+            animation: ${animationMove} ${animationMoveDuration}s
+              ${animationMoveType} forwards;
             position: absolute;
-            top: ${relativeCoordinates.y}px;
-            left: ${relativeCoordinates.x}px;
+            top: ${relativeCoordinates.y + spawnAdjustmentX}px;
+            left: ${relativeCoordinates.x + spawnAdjustmentY}px;
+          `;
+
+          const AnimatedImg = styled.img`
+            animation: ${animationFade} ${animationFadeDuration}s
+              ${animationFadeType} ${animationFadeDelay}s forwards;
           `;
 
           // Create the new image
-          const image = (
+          const image = floater ? (
+            <Floater key={Math.floor(Math.random() * 100000000000)}>
+              <Translator>
+                <AnimatedImg
+                  alt="trail-effect"
+                  width={imageWidth}
+                  height={imageHeight}
+                  src={images[Math.floor(Math.random() * images.length)]}
+                />
+              </Translator>
+            </Floater>
+          ) : (
             <Translator key={Math.floor(Math.random() * 100000000000)}>
-              <img
-                alt="trail-image"
-                style={{
-                  width: imageWidth,
-                  height: imageHeight,
-                }}
+              <AnimatedImg
+                alt="trail-effect"
+                width={imageWidth}
+                height={imageHeight}
                 src={images[Math.floor(Math.random() * images.length)]}
               />
             </Translator>
@@ -143,6 +181,10 @@ const ImageTrailEffect = ({
 
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (

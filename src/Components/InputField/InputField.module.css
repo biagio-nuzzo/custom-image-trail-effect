@@ -1,0 +1,98 @@
+.componentContainer {
+  margin-bottom: 10px;
+}
+
+.label {
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  padding-left: 3px;
+}
+
+.inputFieldContainerEmpty {
+  border-radius: 12px;
+  border: 2px solid var(--input-background-placeholder-color);
+  background-color: var(--input-background-placeholder-color);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.inputFieldContainer {
+  border-radius: 12px;
+  border: 2px solid var(--input-border-color);
+  background-color: var(--light-background);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.inputFieldContainerError {
+  border-radius: 12px;
+  border: 2px solid var(--alert-color-background);
+  background-color: var(--alert-color-background);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.inputFieldContainerError svg {
+  stroke: var(--alert-color);
+}
+
+.inputClass {
+  width: 100%;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--light-text);
+  letter-spacing: 0.2px;
+  caret-color: var(--secondary-color);
+  padding: 0 12px;
+  width: 100%;
+}
+
+.componentContainer span {
+  color: var(--input-border-color);
+  display: flex;
+  align-items: center;
+}
+
+.componentContainer svg {
+  font-size: 20px;
+}
+
+.alertIcon {
+  color: var(--alert-color);
+}
+
+.successIcon {
+  color: var(--success-color);
+}
+
+.deleteIcon {
+  color: var(--light-text);
+  cursor: pointer;
+}
+
+.errorMessage {
+  max-width: 320px;
+  padding: 0 15px;
+  margin: auto;
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--alert-color);
+  text-align: center;
+}
